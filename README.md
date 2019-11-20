@@ -8,7 +8,7 @@ Use your desktop / mobile camera through your browser.
 
 ## Browser
 
-Import the script, instantiate a `WebrtcCamera` object and use `startCapture(callback, backCamera)` with a callback function as first argument and whether or not it should use your back camera. If false, your front camera or webcam is used.
+Import the script, instantiate a `WebrtcCamera` object and use `startCapture(callback, backCamera, borderColor)` with a callback function as first argument and whether or not it should use your back camera. If false, your front camera or webcam is used. The third argument is the overlay border color.
 Use `stopCapture()` to stop it.
 
 ```javascript
@@ -28,7 +28,7 @@ Use `stopCapture()` to stop it.
             }
         }
       
-        camera.startCapture(onOn, backCamera = false)
+        camera.startCapture(onOn, false, 'red')
     <script>
 
 ```
@@ -67,7 +67,7 @@ onTakPicture(blob) {
     // Do something with the blob
 }
 
-this.camera.startCapture(this.onTakePicture, backCamera = true)
+this.camera.startCapture(this.onTakePicture, true, 'red')
 this.camera.stopCapture()
 ```
 
